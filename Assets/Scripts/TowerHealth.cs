@@ -1,9 +1,8 @@
-﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class TowerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -18,15 +17,14 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //thực hiện logic để trừ máu
         TakeDamage(1);
     }
-
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
+
     public void Heal(int heal)
     {
         currentHealth += heal;
