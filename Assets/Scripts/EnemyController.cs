@@ -4,21 +4,34 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed = 0.4f;
+    private float speed = 0.4f;
+    private GameObject player;
+    private Vector2 direction;
+    internal bool foundPlayer = false;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0.5f), Time.deltaTime * speed);
-        if (Vector2.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) < 3)
+        if (Vector2.Distance(transform.position, player.transform.position) < 3)
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
+            foundPlayer = true;
         }
+    }
+    private void FixedUpdate()
+    {
+        if (foundPlayer)
+        {
+            direction = (player.transform.position - transform.position).normalized;
+        }
+        transform.Translate(direction * speed * Time.smoothDeltaTime);
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)
