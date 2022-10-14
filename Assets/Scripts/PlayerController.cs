@@ -31,17 +31,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+
         moveInput.x = joystick.Horizontal;
         moveInput.y = joystick.Vertical;
         if (moveInput != Vector2.zero)
         {
             bool success = TryMove(moveInput);
-            if (!success)
+            if (!success && moveInput.x > 0)
             {
                 success = TryMove(new Vector2(moveInput.x, 0));
 
             }
-            if (!success)
+            if (!success && moveInput.y > 0)
             {
                 success = TryMove(new Vector2(0, moveInput.y));
             }
@@ -65,23 +66,30 @@ public class PlayerController : MonoBehaviour
     }
     private bool TryMove(Vector2 direction)
     {
-
-        int count = rb.Cast(
-            moveInput,
+        if(direction != Vector2.zero)
+        {
+            int count = rb.Cast(
+            direction,
             moveFilter,
             castCollisions,
-            moveSpeed + Time.fixedDeltaTime + collisionOffset
+            moveSpeed * Time.fixedDeltaTime + collisionOffset
             );
-        if (count == 0)
-        {
-            rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
-            return true;
+            if (count == 0)
+            {
+                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
         }
         else
         {
             return false;
-
         }
+        
 
 
 
