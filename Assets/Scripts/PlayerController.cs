@@ -104,4 +104,10 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetTrigger("swordAttack");
     }
+
+    public void Attack()
+    {
+        OnFire();
+    }
+    
 }
