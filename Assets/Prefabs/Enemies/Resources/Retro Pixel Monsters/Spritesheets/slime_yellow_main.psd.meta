@@ -203,7 +203,7 @@ TextureImporter:
       213: 21300126
     second: slime_yellow_main_63
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -263,7 +263,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1745,8 +1744,8 @@ TextureImporter:
       slime_yellow_main_62: 21300124
       slime_yellow_main_54: 21300108
       slime_yellow_main_22: 21300044
-      slime_yellow_main_20: 21300040
       slime_yellow_main_5: 21300010
+      slime_yellow_main_20: 21300040
   spritePackingTag: 
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1

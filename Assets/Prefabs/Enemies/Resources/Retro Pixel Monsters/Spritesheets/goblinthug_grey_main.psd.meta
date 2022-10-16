@@ -203,7 +203,7 @@ TextureImporter:
       213: 21300126
     second: goblinthug_grey_main_63
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -263,7 +263,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1684,7 +1683,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       goblinthug_grey_main_44: 21300088
-      goblinthug_grey_main_62: 21300124
+      goblinthug_grey_main_48: 21300096
       goblinthug_grey_main_18: 21300036
       goblinthug_grey_main_0: 21300000
       goblinthug_grey_main_2: 21300004
@@ -1708,8 +1707,8 @@ TextureImporter:
       goblinthug_grey_main_29: 21300058
       goblinthug_grey_main_24: 21300048
       goblinthug_grey_main_17: 21300034
-      goblinthug_grey_main_54: 21300108
       goblinthug_grey_main_23: 21300046
+      goblinthug_grey_main_54: 21300108
       goblinthug_grey_main_36: 21300072
       goblinthug_grey_main_32: 21300064
       goblinthug_grey_main_58: 21300116
@@ -1743,10 +1742,10 @@ TextureImporter:
       goblinthug_grey_main_5: 21300010
       goblinthug_grey_main_26: 21300052
       goblinthug_grey_main_21: 21300042
-      goblinthug_grey_main_12: 21300024
+      goblinthug_grey_main_62: 21300124
       goblinthug_grey_main_49: 21300098
       goblinthug_grey_main_50: 21300100
-      goblinthug_grey_main_48: 21300096
+      goblinthug_grey_main_12: 21300024
   spritePackingTag: 
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
