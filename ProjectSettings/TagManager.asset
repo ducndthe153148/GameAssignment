@@ -6,6 +6,7 @@ TagManager:
   tags:
   - spawner
   - Tower
+  - enemy
   layers:
   - Default
   - TransparentFX
