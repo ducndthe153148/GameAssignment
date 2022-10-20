@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     public List<Vector3> spawnLocations;
-    public GameObject enemy;
+    public List<GameObject> spawnObjects;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +15,10 @@ public class SpawnEnemies : MonoBehaviour
             var spawnLocation = spawner.transform.position;
             spawnLocations.Add(spawnLocation);
         }
-        Instantiate(enemy, spawnLocations[0], Quaternion.identity);
-        Instantiate(enemy, spawnLocations[1], Quaternion.identity);
-        Instantiate(enemy, spawnLocations[2], Quaternion.identity);
-        Instantiate(enemy, spawnLocations[3], Quaternion.identity);
+        Instantiate(spawnObjects[0], spawnLocations[0], Quaternion.identity);
+        Instantiate(spawnObjects[1], spawnLocations[1], Quaternion.identity);
+        Instantiate(spawnObjects[2], spawnLocations[2], Quaternion.identity);
+        Instantiate(spawnObjects[3], spawnLocations[3], Quaternion.identity);
     }
 
     // Update is called once per frame
