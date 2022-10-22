@@ -90,9 +90,6 @@ public class PlayerController : MonoBehaviour
             return false;
         }
         
-
-
-
     }
 
     void OnMove(InputValue moveValue)

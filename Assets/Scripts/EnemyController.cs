@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public float damage;
     public float speed;
     public float cooldownAttack;
+    public float score;
     private GameObject player;
     private Vector2 direction;
     internal bool foundPlayer = false;

@@ -141,6 +141,7 @@ MonoBehaviour:
   damage: 20
   speed: 0.1
   cooldownAttack: 1
+  score: 10
 --- !u!58 &-1861905528669910461
 CircleCollider2D:
   m_ObjectHideFlags: 0
