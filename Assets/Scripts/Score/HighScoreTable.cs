@@ -21,21 +21,6 @@ public class HighScoreTable : MonoBehaviour
             entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * i);
             entryTransform.gameObject.SetActive(true);
 
-            //int rank = i + 1;
-            //string rankString;
-            //switch (rank)
-            //{
-            //    case 1: rankString = "1ST"; break;
-            //    case 2: rankString = "2ND"; break;
-            //    case 3: rankString = "3RD"; break;
-            //    default: rankString = rank + "TH"; break;
-            //}
-            //entryTransform.Find("posText").GetComponent<TextMeshPro>().text = rankString;
-            //int score = Random.Range(0, 1000);
-            //entryTransform.Find("scoreText").GetComponent<TextMeshPro>().text = score.ToString();
-
-            //string name = "Duc";
-            //entryTransform.Find("nameText").GetComponent<TextMeshPro>().text = name;
         }
     }
     void Start()
