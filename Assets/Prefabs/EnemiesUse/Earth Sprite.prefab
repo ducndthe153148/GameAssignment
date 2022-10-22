@@ -155,9 +155,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: -0.0061956793, y: 0.48753238}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.47069138
 --- !u!50 &-309389071353187285
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +170,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 999
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -178,7 +178,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &4537057759455528277
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4537057759455528277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

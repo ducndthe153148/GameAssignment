@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     // Scene dashboard here
     public void GoToDashBoard()
     {
-
+        SceneManager.LoadScene("DashboardScene");
     }
 
     // Scene excit here
