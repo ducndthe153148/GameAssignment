@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         //thực hiện logic để trừ máu
-        TakeDamage(1);
+        //TakeDamage(1);
     }
 
     public void TakeDamage(int damage)

@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 1f;
 
     public ContactFilter2D moveFilter;
-
+    public SwordHitBox swordAttack;
     public float collisionOffset = 0.05f;
-
+    public GameObject swordHitBox;
+    Collider2D swordCollider;
     Vector2 moveInput;
 
     Rigidbody2D rb;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        swordCollider = swordHitBox.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -58,10 +60,12 @@ public class PlayerController : MonoBehaviour
         if (moveInput.x < 0)
         {
             spriteRenderer.flipX = true;
+            gameObject.BroadcastMessage("IsFacingRight", false);
         }
         else if (moveInput.x > 0)
         {
             spriteRenderer.flipX = false;
+            gameObject.BroadcastMessage("IsFacingRight", true);
         }
     }
     private bool TryMove(Vector2 direction)
@@ -90,9 +94,6 @@ public class PlayerController : MonoBehaviour
             return false;
         }
         
-
-
-
     }
 
     void OnMove(InputValue moveValue)
@@ -109,5 +110,18 @@ public class PlayerController : MonoBehaviour
     {
         OnFire();
     }
-    
+
+    /*public void SwordAttack()
+    {
+
+        if (spriteRenderer.flipX == true)
+        {
+            swordAttack.AttackLeft();
+        }
+        else
+        {
+            swordAttack.AttackRight();
+        }
+    }*/
+
 }
