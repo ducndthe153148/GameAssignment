@@ -39,7 +39,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791839981064513221}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: -8493119056386114083}
   - component: {fileID: -3858601406865787238}
   - component: {fileID: 8951092571696344020}
+  - component: {fileID: -1447294198507832117}
   m_Layer: 0
   m_Name: Fire Sprite
   m_TagString: enemy
@@ -255,8 +256,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 999
-  m_LinearDrag: 0
+  m_Mass: 1
+  m_LinearDrag: 15
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -277,3 +278,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+--- !u!114 &-1447294198507832117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7413201790036726010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed470707f5c081408ae0b4879aa3165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 5
