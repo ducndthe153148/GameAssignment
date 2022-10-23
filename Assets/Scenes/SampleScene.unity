@@ -36444,10 +36444,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnLocations: []
   spawnObjects:
-  - {fileID: 7413201790036726010, guid: b1b3fb206cc3ba34f9c8ca0c2e62bf41, type: 3}
-  - {fileID: 3044942182980664071, guid: 8b16b99f88073294d808a5d55f5ab8e0, type: 3}
   - {fileID: 5450836662510391858, guid: 94a51b9234b183942b5399e964809c76, type: 3}
+  - {fileID: 7413201790036726010, guid: b1b3fb206cc3ba34f9c8ca0c2e62bf41, type: 3}
   - {fileID: 2096350687333336918, guid: 790340885d6eaab499d9243029882a52, type: 3}
+  - {fileID: 3044942182980664071, guid: 8b16b99f88073294d808a5d55f5ab8e0, type: 3}
 --- !u!4 &811851424
 Transform:
   m_ObjectHideFlags: 0
@@ -37553,7 +37553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
