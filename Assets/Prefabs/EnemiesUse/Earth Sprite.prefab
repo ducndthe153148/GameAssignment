@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2096350687333234506}
   - component: {fileID: 7911677594189509436}
   - component: {fileID: -309389071353187285}
+  - component: {fileID: -3413447825832105426}
   m_Layer: 0
   m_Name: Earth Sprite
   m_TagString: enemy
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096350687333336918}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1820b480aa1db4d854263fd5fe0cd9, type: 3}
   m_Name: 
@@ -179,6 +180,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-3413447825832105426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096350687333336918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc24a7089ee33f47966bb8303b9861d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 3
 --- !u!1 &4537057759455528277
 GameObject:
   m_ObjectHideFlags: 0
