@@ -40717,6 +40717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075556003}
   - component: {fileID: 2075556004}
+  - component: {fileID: 2075556005}
   m_Layer: 0
   m_Name: PlayerHealth
   m_TagString: Untagged
@@ -40754,6 +40755,26 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 749784247}
+--- !u!95 &2075556005
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075556002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7eb2cb070d09af549a61f97762dcb709, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2085111799
 GameObject:
   m_ObjectHideFlags: 0
@@ -41034,6 +41055,8 @@ MonoBehaviour:
   swordAttack: {fileID: 1340707003}
   collisionOffset: 0.05
   swordHitBox: {fileID: 1340707002}
+  active: 1
+  PlayerHeath: {fileID: 2075556004}
 --- !u!4 &3101097874672493741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3101097875454489485, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}

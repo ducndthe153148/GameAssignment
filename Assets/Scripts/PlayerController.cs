@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,11 +16,15 @@ public class PlayerController : MonoBehaviour
     Collider2D swordCollider;
     Vector2 moveInput;
 
+    [SerializeField]
+    public bool active = true;
+    [SerializeField]
+    public PlayerHealth PlayerHeath;
     Rigidbody2D rb;
 
     Animator animator;
     SpriteRenderer spriteRenderer;
-
+    int i = 0;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     // Start is called before the first frame update
     void Start()
@@ -28,12 +33,22 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         swordCollider = swordHitBox.GetComponent<Collider2D>();
+        //PlayerHeath = GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
+
     private void FixedUpdate()
     {
-
+        if (!active)
+        {
+            return;
+        }
+        if (PlayerHeath.currentHealth == 0)
+        {
+            die();
+            StartCoroutine(reviveMe(5));
+        }
         moveInput.x = joystick.Horizontal;
         moveInput.y = joystick.Vertical;
         if (moveInput != Vector2.zero)
@@ -48,7 +63,7 @@ public class PlayerController : MonoBehaviour
             {
                 success = TryMove(new Vector2(0, moveInput.y));
             }
-
+          
             animator.SetBool("isMoving", success);
         }
         else
@@ -67,9 +82,15 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = false;
             gameObject.BroadcastMessage("IsFacingRight", true);
         }
+       
+        //i++;
+
+       
+
     }
     private bool TryMove(Vector2 direction)
     {
+        
         if(direction != Vector2.zero)
         {
             int count = rb.Cast(
@@ -93,7 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-        
+      
     }
 
     void OnMove(InputValue moveValue)
@@ -109,6 +130,31 @@ public class PlayerController : MonoBehaviour
     public void Attack()
     {
         OnFire();
+    }
+
+    public void die()
+    {
+        //if (i == 0)
+        //{
+            animator.SetTrigger("death1");
+        animator.SetBool("death", true);
+            //i++;
+            active = false;
+       
+        //}
+
+    }
+
+    IEnumerator reviveMe(int secs)
+    {
+        yield return new WaitForSeconds(secs);
+        revive();
+    }
+    public void revive()
+    {
+        animator.SetBool("death",false);
+        PlayerHeath.currentHealth = PlayerHeath.maxHealth;
+        active = true;
     }
 
     /*public void SwordAttack()
