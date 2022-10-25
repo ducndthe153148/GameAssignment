@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-    // Start is called before the first frame update
+
+    [SerializeField] public GameObject LightningPanel;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -117,6 +119,15 @@ public class PlayerController : MonoBehaviour
         {
             o.BroadcastMessage("OnHit", 1);
         }
+        StartCoroutine(WaitBeforeClick());
+    }
+    IEnumerator WaitBeforeClick()
+    {
+        LightningPanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.2f);
+        LightningPanel.SetActive(false);
+
     }
 
     /*public void SwordAttack()
