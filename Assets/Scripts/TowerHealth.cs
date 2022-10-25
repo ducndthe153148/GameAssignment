@@ -17,7 +17,6 @@ public class TowerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TakeDamage(1);
     }
     public void TakeDamage(int damage)
     {
