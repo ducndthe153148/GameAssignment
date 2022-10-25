@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         animator.SetTrigger("swordAttack");
+        //CountScore.scoreValue += 10;
     }
 
     public void Attack()
