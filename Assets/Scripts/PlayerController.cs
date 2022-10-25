@@ -111,6 +111,14 @@ public class PlayerController : MonoBehaviour
         OnFire();
     }
 
+    public void DamageAllEnemy()
+    {
+        foreach(GameObject o in GameObject.FindGameObjectsWithTag("enemy"))
+        {
+            o.BroadcastMessage("OnHit", 1);
+        }
+    }
+
     /*public void SwordAttack()
     {
 
