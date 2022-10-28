@@ -24,6 +24,7 @@ public class TowerHealth : MonoBehaviour
         if (currentHealth < 0)
         {
             currentHealth = 0;
+
         }
         healthBar.SetHealth(currentHealth);
     }

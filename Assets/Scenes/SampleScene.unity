@@ -40902,7 +40902,7 @@ GameObject:
   - component: {fileID: 2075556004}
   m_Layer: 0
   m_Name: PlayerHealth
-  m_TagString: Untagged
+  m_TagString: PlayerHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40935,7 +40935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 50
   healthBar: {fileID: 749784247}
 --- !u!1 &2085111799
 GameObject:
@@ -41217,7 +41217,7 @@ MonoBehaviour:
   swordAttack: {fileID: 1340707003}
   collisionOffset: 0.05
   swordHitBox: {fileID: 1340707002}
-  LightningPanel: {fileID: 1772237214}
+  LightningPanel: {fileID: 0}
 --- !u!4 &3101097874672493741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3101097875454489485, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}

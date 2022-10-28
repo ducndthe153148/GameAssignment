@@ -18,8 +18,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //thực hiện logic để trừ máu
-        //TakeDamage(1);
+
     }
 
     public void TakeDamage(int damage)

@@ -19,11 +19,11 @@ public class SpawnEnemies : MonoBehaviour
         Instantiate(spawnObjects[1], spawnLocations[1], Quaternion.identity);
         Instantiate(spawnObjects[2], spawnLocations[2], Quaternion.identity);
         Instantiate(spawnObjects[3], spawnLocations[3], Quaternion.identity);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 }
