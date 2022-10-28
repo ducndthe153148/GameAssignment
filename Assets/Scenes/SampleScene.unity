@@ -36514,8 +36514,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 811851424}
-  - component: {fileID: 811851423}
   - component: {fileID: 811851425}
+  - component: {fileID: 811851426}
+  - component: {fileID: 811851427}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -36523,24 +36524,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &811851423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811851422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc9dc7c463e14d4ebfde7d3ea6675ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnLocations: []
-  spawnObjects:
-  - {fileID: 5450836662510391858, guid: 94a51b9234b183942b5399e964809c76, type: 3}
-  - {fileID: 7413201790036726010, guid: b1b3fb206cc3ba34f9c8ca0c2e62bf41, type: 3}
-  - {fileID: 2096350687333336918, guid: 790340885d6eaab499d9243029882a52, type: 3}
-  - {fileID: 3044942182980664071, guid: 8b16b99f88073294d808a5d55f5ab8e0, type: 3}
 --- !u!4 &811851424
 Transform:
   m_ObjectHideFlags: 0
@@ -36569,6 +36552,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuPanel: {fileID: 932410264}
+--- !u!114 &811851426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811851422}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263ae0ecb900ac8439dd65e99b05c265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FacA: {fileID: 1813447431}
+--- !u!114 &811851427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811851422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc9dc7c463e14d4ebfde7d3ea6675ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnLocations:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  spawnObjects:
+  - {fileID: 7413201790036726010, guid: b008b11cc9eb629409ab3b426903b4c5, type: 3}
+  - {fileID: 2096350687333336918, guid: 8fe87e09d83325d49940c11a7ee025a6, type: 3}
+  - {fileID: 3044942182980664071, guid: 77e6fe3ac8cbb3f40a9ee53faade1999, type: 3}
+  - {fileID: 5450836662510391858, guid: f736b11568bdf704c897ab5b4735a54c, type: 3}
 --- !u!1 &845090452
 GameObject:
   m_ObjectHideFlags: 0
