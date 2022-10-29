@@ -37565,6 +37565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -40923,7 +40924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437243631846099791, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
       propertyPath: m_Offset.x
-      value: 0.108495176
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6437243631846099791, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
       propertyPath: m_IsTrigger
