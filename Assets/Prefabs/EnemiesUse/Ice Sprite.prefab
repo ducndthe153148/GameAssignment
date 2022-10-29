@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1861905528669910461}
   - component: {fileID: -2834730621573179551}
   - component: {fileID: 2188296067969858295}
-  - component: {fileID: 8060491254745581144}
+  - component: {fileID: -906470618616568668}
   m_Layer: 0
   m_Name: Ice Sprite
   m_TagString: enemy
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
---- !u!114 &8060491254745581144
+--- !u!114 &-906470618616568668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

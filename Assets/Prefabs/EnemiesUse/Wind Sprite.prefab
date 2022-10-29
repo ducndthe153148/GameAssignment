@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7917720236455025457}
   - component: {fileID: 6401084610611997368}
   - component: {fileID: -7602813545992742733}
-  - component: {fileID: -1049837485631660252}
+  - component: {fileID: 2226035601792910067}
   m_Layer: 0
   m_Name: Wind Sprite
   m_TagString: enemy
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
---- !u!114 &-1049837485631660252
+--- !u!114 &2226035601792910067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

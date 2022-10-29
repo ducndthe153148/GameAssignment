@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hit : MonoBehaviour
 {
-    public float knockBackTime = 10f;
+    public float knockBackTime = 5f;
     [SerializeField]
     private TowerHealth towerHealth;
     [SerializeField]
@@ -25,7 +25,10 @@ public class Hit : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        damage = (int)enemyController.damage;
+        if (enemyController != null)
+        {
+            damage = (int)enemyController.damage;
+        }
         if (collision.gameObject.tag == "Tower")
         {
             Rigidbody2D rb = transform.GetComponent<Rigidbody2D>();

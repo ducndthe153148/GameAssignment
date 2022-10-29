@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: -8493119056386114083}
   - component: {fileID: -3858601406865787238}
   - component: {fileID: 8951092571696344020}
-  - component: {fileID: -1447294198507832117}
+  - component: {fileID: -565220669939324692}
   m_Layer: 0
   m_Name: Fire Sprite
   m_TagString: enemy
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
---- !u!114 &-1447294198507832117
+--- !u!114 &-565220669939324692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

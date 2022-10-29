@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7911677594189509436}
   - component: {fileID: -309389071353187285}
   - component: {fileID: -3413447825832105426}
-  - component: {fileID: 576209558808632180}
+  - component: {fileID: 1231645605114250123}
   m_Layer: 0
   m_Name: Earth Sprite
   m_TagString: enemy
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
---- !u!114 &576209558808632180
+--- !u!114 &1231645605114250123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
