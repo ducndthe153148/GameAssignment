@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
     Collider2D swordCollider;
     Vector2 moveInput;
 
+    [SerializeField]
+    public bool active = true;
+    [SerializeField]
+    public PlayerHealth PlayerHeath;
+
     Rigidbody2D rb;
 
     Animator animator;
@@ -23,7 +28,7 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     [SerializeField] public GameObject LightningPanel;
-
+    int i = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +40,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if (!active)
+        {
+            return;
+        }
+        if (PlayerHeath.currentHealth == 0)
+        {
+            die();
+            StartCoroutine(reviveMe(5));
+        }
 
         moveInput.x = joystick.Horizontal;
         moveInput.y = joystick.Vertical;
@@ -128,6 +142,30 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         LightningPanel.SetActive(false);
 
+    }
+    public void die()
+    {
+        //if (i == 0)
+        //{
+        animator.SetTrigger("death1");
+        animator.SetBool("death", true);
+        //i++;
+        active = false;
+
+        //}
+
+    }
+
+    IEnumerator reviveMe(int secs)
+    {
+        yield return new WaitForSeconds(secs);
+        revive();
+    }
+    public void revive()
+    {
+        animator.SetBool("death", false);
+        PlayerHeath.currentHealth = PlayerHeath.maxHealth;
+        active = true;
     }
 
     /*public void SwordAttack()
