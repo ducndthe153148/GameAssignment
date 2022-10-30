@@ -34,6 +34,7 @@ public class Enemies : MonoBehaviour
 
     public void RemoveEnemy()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
