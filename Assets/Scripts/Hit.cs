@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class Hit : MonoBehaviour
@@ -9,6 +10,7 @@ public class Hit : MonoBehaviour
     private TowerHealth towerHealth;
     [SerializeField]
     private PlayerHealth playerHealth;
+    private PlayerController playerController;
     private GameObject[] enemiesSpawn;
     private int health;
     private int damage;
@@ -22,6 +24,8 @@ public class Hit : MonoBehaviour
         playerHealth = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<PlayerHealth>();
         enemiesSpawn = GameObject.FindGameObjectsWithTag("enemy");
         enemyController = GetComponent<EnemyController>();
+        playerController= GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,7 +33,7 @@ public class Hit : MonoBehaviour
         {
             damage = (int)enemyController.damage;
         }
-        if (collision.gameObject.tag == "Tower")
+        if (collision.transform.tag == "Tower")
         {
             Rigidbody2D rb = transform.GetComponent<Rigidbody2D>();
             if (rb != null)
@@ -42,8 +46,11 @@ public class Hit : MonoBehaviour
             }
             towerHealth.TakeDamage(damage);
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
+            if (!playerController.immune)
+            {
+
             Rigidbody2D rb = transform.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
@@ -54,6 +61,7 @@ public class Hit : MonoBehaviour
                 StartCoroutine(knockBack(rb));
             }
             playerHealth.TakeDamage(damage);
+            }
         }
 
 

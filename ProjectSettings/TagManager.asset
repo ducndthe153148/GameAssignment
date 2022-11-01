@@ -8,6 +8,7 @@ TagManager:
   - Tower
   - enemy
   - PlayerHealth
+  - sword
   layers:
   - Default
   - TransparentFX

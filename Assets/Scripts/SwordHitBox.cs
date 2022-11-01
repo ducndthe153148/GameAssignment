@@ -28,7 +28,11 @@ public class SwordHitBox : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.transform.tag == "enemy")
+        {
+
         collision.collider.SendMessage("OnHit", swordDamage);
+        }
         /*if (collision.collider.tag == "enemy")
         {
             Enemies enemy = collision.collider.GetComponent<Enemies>();
