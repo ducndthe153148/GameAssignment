@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class ObjectPool1 : MonoBehaviour
 {
-    public static ObjectPool SharedInstance;
+    public static ObjectPool1 SharedInstance;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountToPool;
@@ -27,11 +27,11 @@ public class ObjectPool : MonoBehaviour
     }
     public GameObject GetPooledObject()
     {
-        for (int i = 0; i < amountToPool; i++)
+        foreach(GameObject obj in pooledObjects)
         {
-            if (!pooledObjects[i].activeInHierarchy)
+            if (!obj.activeInHierarchy)
             {
-                return pooledObjects[i];
+                return obj;
             }
         }
         return null;
