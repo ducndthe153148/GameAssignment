@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     [SerializeField] public GameObject LightningPanel;
-    int i = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
