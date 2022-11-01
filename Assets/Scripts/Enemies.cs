@@ -11,6 +11,7 @@ public class Enemies : MonoBehaviour
     public void Start()
     {
         animator = GetComponent<Animator>();
+        _enemyController = GetComponent<EnemyController>();
     }
     public float Health
     {
@@ -20,15 +21,15 @@ public class Enemies : MonoBehaviour
             if (_health <= 0)
             {
                 animator.SetTrigger("death");
-                //if (_enemyController != null)
-                //{
-                //    Debug.Log(_enemyController.score);
-                //}
-                //if (_enemyController != null)
-                //{
-                //    CountScore.scoreValue += (int)_enemyController.score;
-                //}
-                CountScore.scoreValue += 1;
+                if (_enemyController != null)
+                {
+                    Debug.Log(_enemyController.score);
+                }
+                if (_enemyController != null)
+                {
+                    CountScore.scoreValue += (int)_enemyController.score;
+                }
+                //CountScore.scoreValue += 1;
                 //Debug.Log(_enemyController.score);
             }
         }

@@ -36541,11 +36541,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLocations: []
-  spawnObjects:
-  - {fileID: 2096350687333336918, guid: 790340885d6eaab499d9243029882a52, type: 3}
-  - {fileID: 7413201790036726010, guid: b1b3fb206cc3ba34f9c8ca0c2e62bf41, type: 3}
-  - {fileID: 3044942182980664071, guid: 8b16b99f88073294d808a5d55f5ab8e0, type: 3}
-  - {fileID: 5450836662510391858, guid: 94a51b9234b183942b5399e964809c76, type: 3}
 --- !u!4 &811851424
 Transform:
   m_ObjectHideFlags: 0
@@ -41098,6 +41093,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 602668538244830295, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
+      propertyPath: m_TagString
+      value: sword
+      objectReference: {fileID: 0}
     - target: {fileID: 2019368261536616123, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
       propertyPath: left.x
       value: -0.44
@@ -41168,11 +41167,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437243631846099791, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
       propertyPath: m_Size.x
-      value: 0.10242325
+      value: 0.7122657
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437243631846099791, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2457481
       objectReference: {fileID: 0}
     - target: {fileID: 6437243631846099791, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
       propertyPath: m_Offset.x
-      value: 0.25
+      value: 0.36948606
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437243631846099791, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.034896433
       objectReference: {fileID: 0}
     - target: {fileID: 6437243631846099791, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
       propertyPath: m_IsTrigger
@@ -41184,11 +41191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7175672050006196821, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.05
+      value: 0.011
       objectReference: {fileID: 0}
     - target: {fileID: 7175672050006196821, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: -0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}
@@ -41298,6 +41305,7 @@ MonoBehaviour:
   active: 1
   PlayerHeath: {fileID: 2075556004}
   LightningPanel: {fileID: 939681253}
+  immune: 0
 --- !u!4 &3101097874672493741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3101097875454489485, guid: d85ab7110d45e9047838f4a7063eeea8, type: 3}

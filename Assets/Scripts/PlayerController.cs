@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     [SerializeField] public GameObject LightningPanel;
+    public bool immune = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -119,6 +120,18 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         animator.SetTrigger("swordAttack");
+        immune=true;
+        StopCoroutine("SetMyBoolToFalse");
+        StartCoroutine("SetMyBoolToFalse");
+    }
+    public IEnumerator SetMyBoolToFalse()
+    {
+
+        yield return new WaitForSeconds(0.3f);
+      
+        immune = false;
+      
+        yield return null;
     }
 
     public void Attack()
