@@ -75,13 +75,21 @@ public class PlayerController : MonoBehaviour
         //set direction of sprites
         if (moveInput.x < 0)
         {
+            if(swordHitBox.transform.localScale.x > 0)
+            {
+                swordHitBox.transform.localScale *= -1;
+            }
             spriteRenderer.flipX = true;
-            gameObject.BroadcastMessage("IsFacingRight", false);
+            //gameObject.BroadcastMessage("IsFacingRight", false);
         }
         else if (moveInput.x > 0)
         {
+            if (swordHitBox.transform.localScale.x < 0)
+            {
+                swordHitBox.transform.localScale *= -1;
+            }
             spriteRenderer.flipX = false;
-            gameObject.BroadcastMessage("IsFacingRight", true);
+            //gameObject.BroadcastMessage("IsFacingRight", true);
         }
     }
     private bool TryMove(Vector2 direction)
