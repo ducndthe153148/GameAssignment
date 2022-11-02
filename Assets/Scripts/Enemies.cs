@@ -7,11 +7,13 @@ public class Enemies : MonoBehaviour
     Animator animator;
     public float _health = 3;
     private EnemyController _enemyController;
+    Fireball fireball;
     // Start is called before the first frame update
     public void Start()
     {
         animator = GetComponent<Animator>();
         _enemyController = GetComponent<EnemyController>();
+        fireball = new Fireball();
     }
     public float Health
     {
@@ -42,6 +44,15 @@ public class Enemies : MonoBehaviour
     {
         //Debug.Log("hit for " + damage);
         Health -= damage;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Fireball")
+        {
+            Health -= 2f;
+        }
+        fireball.FireBallExplode();
     }
 
     public void RemoveEnemy()

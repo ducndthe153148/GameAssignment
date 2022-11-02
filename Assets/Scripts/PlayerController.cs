@@ -7,14 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     public FixedJoystick joystick;
     public float moveSpeed = 1f;
-
+    public GameObject fireBall;
     public ContactFilter2D moveFilter;
     public SwordHitBox swordAttack;
     public float collisionOffset = 0.05f;
     public GameObject swordHitBox;
     Collider2D swordCollider;
     Vector2 moveInput;
-
+    GameObject firePoint;
     [SerializeField]
     public bool active = true;
     [SerializeField]
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         swordCollider = swordHitBox.GetComponent<Collider2D>();
+        firePoint = GameObject.Find("Firepoint");
     }
 
     // Update is called once per frame
@@ -73,22 +74,38 @@ public class PlayerController : MonoBehaviour
         }
 
         //set direction of sprites
-        if (moveInput.x < 0)
+        if (moveInput.x < 0)  // direction left
         {
             if(swordHitBox.transform.localScale.x > 0)
             {
                 swordHitBox.transform.localScale *= -1;
             }
             spriteRenderer.flipX = true;
+            if (firePoint.transform.localScale.x > 0)
+            {
+                firePoint.transform.localScale *= -1;
+                if(firePoint.transform.localPosition.x > 0)
+                {
+                    firePoint.transform.localPosition *= -1;
+                }
+            }
             //gameObject.BroadcastMessage("IsFacingRight", false);
         }
-        else if (moveInput.x > 0)
+        else if (moveInput.x > 0)  // direction right
         {
             if (swordHitBox.transform.localScale.x < 0)
             {
                 swordHitBox.transform.localScale *= -1;
             }
             spriteRenderer.flipX = false;
+            if (firePoint.transform.localScale.x < 0)
+            {
+                firePoint.transform.localScale *= -1;
+                if (firePoint.transform.localPosition.x < 0)
+                {
+                    firePoint.transform.localPosition *= -1;
+                }
+            }
             //gameObject.BroadcastMessage("IsFacingRight", true);
         }
     }
@@ -188,17 +205,23 @@ public class PlayerController : MonoBehaviour
         active = true;
     }
 
-    /*public void SwordAttack()
+    public void AttackFireBall()
     {
-
-        if (spriteRenderer.flipX == true)
-        {
-            swordAttack.AttackLeft();
+        /*if(spriteRenderer.flipX == true){   //quay ben trai
+            if (firePoint.transform.localScale.x > 0)
+            {
+                firePoint.transform.localScale *= -1;
+            }
         }
-        else
+        else if(spriteRenderer.flipX == false) // quay ben phai
         {
-            swordAttack.AttackRight();
-        }
-    }*/
+            if(firePoint.transform.localScale.x < 0)
+            {
+                firePoint.transform.localScale *= -1;
+            }
+        }*/
+        animator.SetTrigger("swordAttack");
+        Instantiate(fireBall,transform.position,Quaternion.identity);
+    }
 
 }
