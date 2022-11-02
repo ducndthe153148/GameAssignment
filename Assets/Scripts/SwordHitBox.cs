@@ -7,8 +7,8 @@ public class SwordHitBox : MonoBehaviour
     public float swordDamage = 1f;
     Vector2 rightAttackOffset;
     public Collider2D swordCollier;
-    public Vector3 right = new Vector3(0.05f, 0.01f, 0);
-    public Vector3 left = new Vector3(-0.44f, 0.01f, 0);
+    //public Vector3 right = new Vector3(0.05f, 0.01f, 0);
+    //public Vector3 left = new Vector3(-0.44f, 0.01f, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,7 @@ public class SwordHitBox : MonoBehaviour
         }*/
     }
 
-    void IsFacingRight(bool isFacingRight)
+    /*void IsFacingRight(bool isFacingRight)
     {
         if (isFacingRight)
         {
@@ -53,6 +53,6 @@ public class SwordHitBox : MonoBehaviour
         {
             gameObject.transform.localPosition = left;
         }
-    }
+    }*/
 
 }
