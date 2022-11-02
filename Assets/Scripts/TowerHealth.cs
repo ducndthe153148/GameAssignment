@@ -7,6 +7,8 @@ public class TowerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
+
+    [SerializeField] public GameObject EndGamePanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,11 @@ public class TowerHealth : MonoBehaviour
         if (currentHealth < 0)
         {
             currentHealth = 0;
+            // End game and save data to json
+            // 
 
+            Time.timeScale = 0f;
+            EndGamePanel.SetActive(true);
         }
         healthBar.SetHealth(currentHealth);
     }
