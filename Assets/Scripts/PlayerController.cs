@@ -21,12 +21,10 @@ public class PlayerController : MonoBehaviour
     public PlayerHealth PlayerHeath;
 
     Rigidbody2D rb;
-
     Animator animator;
     SpriteRenderer spriteRenderer;
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
     [SerializeField] public GameObject LightningPanel;
     public bool immune = false;
     void Start()
@@ -207,21 +205,12 @@ public class PlayerController : MonoBehaviour
 
     public void AttackFireBall()
     {
-        /*if(spriteRenderer.flipX == true){   //quay ben trai
-            if (firePoint.transform.localScale.x > 0)
-            {
-                firePoint.transform.localScale *= -1;
-            }
-        }
-        else if(spriteRenderer.flipX == false) // quay ben phai
-        {
-            if(firePoint.transform.localScale.x < 0)
-            {
-                firePoint.transform.localScale *= -1;
-            }
-        }*/
+        
         animator.SetTrigger("swordAttack");
         Instantiate(fireBall,transform.position,Quaternion.identity);
+        immune = true;
+        StopCoroutine("SetMyBoolToFalse");
+        StartCoroutine("SetMyBoolToFalse");
     }
 
 }
