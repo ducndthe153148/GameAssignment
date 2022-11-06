@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     [SerializeField] public GameObject LightningPanel;
     public bool immune = false;
+    SpriteRenderer sprite;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         swordCollider = swordHitBox.GetComponent<Collider2D>();
         firePoint = GameObject.Find("Firepoint");
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -205,12 +207,29 @@ public class PlayerController : MonoBehaviour
 
     public void AttackFireBall()
     {
-        
-        animator.SetTrigger("swordAttack");
-        Instantiate(fireBall,transform.position,Quaternion.identity);
-        immune = true;
-        StopCoroutine("SetMyBoolToFalse");
-        StartCoroutine("SetMyBoolToFalse");
-    }
 
+        animator.SetTrigger("swordAttack");
+        Instantiate(fireBall, transform.position, Quaternion.identity);
+        immune = true;
+        StopCoroutine(SetMyBoolToFalse());
+        StartCoroutine(SetMyBoolToFalse());
+
+    }
+    public void ImmuneSkill()
+    {
+        sprite.color = new Color(1, 1, 0, 1);
+        immune = true;
+        StopCoroutine(SetImmuneSkill(5f));
+        StartCoroutine(SetImmuneSkill(5f));
+    }
+    public IEnumerator SetImmuneSkill(float waitTime)
+    {
+
+        yield return new WaitForSeconds(waitTime);
+
+        immune = false;
+        sprite.color = new Color(1, 1, 1, 1);
+
+        yield return null;
+    }
 }
