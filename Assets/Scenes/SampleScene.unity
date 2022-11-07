@@ -37726,7 +37726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageCooldown: {fileID: 1665114451}
   textCooldown: {fileID: 1342329275}
-  cooldownTime: 10
+  cooldownTime: 20
 --- !u!1 &1110356722
 GameObject:
   m_ObjectHideFlags: 0
@@ -38193,6 +38193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -40737,7 +40738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageCooldown: {fileID: 2066921396}
   textCooldown: {fileID: 503026197}
-  cooldownTime: 5
+  cooldownTime: 6
 --- !u!1 &1775492104
 GameObject:
   m_ObjectHideFlags: 0

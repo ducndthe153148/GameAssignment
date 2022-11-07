@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemies : MonoBehaviour
 {
     Animator animator;
-    public float _health = 3;
+    //public float _health = 3;
     private EnemyController _enemyController;
     Fireball fireball;
     // Start is called before the first frame update
@@ -19,8 +19,8 @@ public class Enemies : MonoBehaviour
     {
         set
         {
-            _health = value;
-            if (_health <= 0)
+            _enemyController.health = value;
+            if (_enemyController.health <= 0)
             {
                 animator.SetTrigger("death");
                 if (_enemyController != null)
@@ -37,20 +37,21 @@ public class Enemies : MonoBehaviour
         }
         get
         {
-            return _health;
+            return _enemyController.health;
         }
     }
     void OnHit(float damage)
     {
         //Debug.Log("hit for " + damage);
         Health -= damage;
+        Debug.Log("Quai con " + Health + " mau");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Fireball")
         {
-            Health -= 2f;
+            Health -= 200f;
         }
         fireball.FireBallExplode();
     }
