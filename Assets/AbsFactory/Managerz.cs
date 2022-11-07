@@ -10,30 +10,28 @@ public class Managerz : MonoBehaviour
 
     //private GameObject FacBuilding;
     public GameObject FacA;
-    //private GameObject FacB;
-    //private GameObject FacC;
-    //private GameObject FacD;
 
     // Start is called before the first frame update
     void Start()
     {
-        Assign();
-        InvokeRepeating(nameof(spawn), 5, 4);
+        InvokeRepeating(nameof(spawn), 60, 60);
+        
     }
 
     public void spawn()
     {
+        Assign();
         for (var i = 0; i < Max; i++)
         {
             if (_factoryBuildings[i] == null || _factoryBuildings[i].GetComponent<EnemyFactory>() == null) continue;
 
             if (Random.Range(0, 2) == 0)
             {
-                _factoryBuildings[i].GetComponent<EnemyFactory>().createMelee();
+                _factoryBuildings[i].GetComponent<EnemyFactory>().createBoss();
             }
             else
             {
-                _factoryBuildings[i].GetComponent<EnemyFactory>().createRange();
+                _factoryBuildings[i].GetComponent<EnemyFactory>().createMob();
             }
         
         }
@@ -64,9 +62,6 @@ public class Managerz : MonoBehaviour
             fireFactory.SpawnTransform = SpawnFacTransform;
         }
         SpawnFacTransform.gameObject.SetActive(true);
-        //CreateAll(1, FacB, out SpawnFacTransform);
-        //CreateAll(2, FacC, out SpawnFacTransform);
-        //CreateAll(3, FacD, out SpawnFacTransform);
 
         
     }

@@ -6,10 +6,10 @@ public class FireFactory : EnemyFactory
     
 {
     public GameObject Fac;
-    private const string FireRangeName = "Fire_range";
-    private const string FireMeleeName = "Fire_melee";
+    private const string FireRangeName = "Fire_Boss";
+    private const string FireMeleeName = "Fire_Mob";
 
-    public override void createMelee()
+    public override void createBoss()
     {
         var FireRangeObj = Resources.Load(FireRangeName) as GameObject;
         if(FireRangeObj != null)
@@ -22,7 +22,7 @@ public class FireFactory : EnemyFactory
         }
     }
 
-    public override void createRange()
+    public override void createMob()
     {
         var FireMeleeObj = Resources.Load(FireMeleeName) as GameObject;
         if (FireMeleeObj != null)
