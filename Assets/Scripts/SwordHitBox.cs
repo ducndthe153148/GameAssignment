@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwordHitBox : MonoBehaviour
 {
-    public float swordDamage = 1f;
+    //public float swordDamage = 1f;
     Vector2 rightAttackOffset;
     public Collider2D swordCollier;
     //public Vector3 right = new Vector3(0.05f, 0.01f, 0);
@@ -31,7 +31,7 @@ public class SwordHitBox : MonoBehaviour
         if(collision.transform.tag == "enemy")
         {
 
-        collision.collider.SendMessage("OnHit", swordDamage);
+        collision.collider.SendMessage("OnHit", 100f);
         }
         /*if (collision.collider.tag == "enemy")
         {

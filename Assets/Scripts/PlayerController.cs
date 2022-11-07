@@ -168,7 +168,7 @@ public class PlayerController : MonoBehaviour
     {
         foreach(GameObject o in GameObject.FindGameObjectsWithTag("enemy"))
         {
-            o.BroadcastMessage("OnHit", 1);
+            o.BroadcastMessage("OnHit", 300f);
         }
         StartCoroutine(WaitBeforeClick());
     }
