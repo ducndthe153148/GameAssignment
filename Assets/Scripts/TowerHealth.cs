@@ -7,7 +7,7 @@ public class TowerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
-
+    public SoundManager soundManager;   
     [SerializeField] public GameObject EndGamePanel;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class TowerHealth : MonoBehaviour
             currentHealth = 0;
             // End game and save data to json
             // 
-
+            soundManager.play("explosion");
             Time.timeScale = 0f;
             EndGamePanel.SetActive(true);
         }

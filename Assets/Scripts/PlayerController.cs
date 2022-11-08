@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject LightningPanel;
     public bool immune = false;
     SpriteRenderer sprite;
+   
+    public SoundManager soundManager;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
         swordCollider = swordHitBox.GetComponent<Collider2D>();
         firePoint = GameObject.Find("Firepoint");
         sprite = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -162,11 +165,13 @@ public class PlayerController : MonoBehaviour
     public void Attack()
     {
         OnFire();
+        soundManager.play("slash");
     }
 
     public void DamageAllEnemy()
     {
-        foreach(GameObject o in GameObject.FindGameObjectsWithTag("enemy"))
+        soundManager.play("lightining");
+        foreach (GameObject o in GameObject.FindGameObjectsWithTag("enemy"))
         {
             o.BroadcastMessage("OnHit", 300f);
         }
@@ -188,7 +193,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("death", true);
         //i++;
         active = false;
-
+        soundManager.play("death");
         //}
 
     }
@@ -203,6 +208,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("death", false);
         PlayerHeath.currentHealth = PlayerHeath.maxHealth;
         active = true;
+        soundManager.play("spawn");
     }
 
     public void AttackFireBall()
@@ -213,10 +219,12 @@ public class PlayerController : MonoBehaviour
         immune = true;
         StopCoroutine(SetMyBoolToFalse());
         StartCoroutine(SetMyBoolToFalse());
+        soundManager.play("fire_ball");
 
     }
     public void ImmuneSkill()
     {
+        soundManager.play("immune");
         sprite.color = new Color(1, 1, 0, 1);
         immune = true;
         StopCoroutine(SetImmuneSkill(5f));
